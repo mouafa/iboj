@@ -1,0 +1,34 @@
+version: '2'
+services:
+  postgres:
+    image: postgres
+    ports:
+    - "5432:5432"
+    volumes:
+    - ./postgres_data/:/var/lib/postgresql/data/:rw
+    environment:
+    - POSTGRES_PASSWORD=tunpixel2016
+    - POSTGRES_USER=tunpixel
+    - POSTGRES_DB=talenthub
+
+  backend:
+    build:
+      context: .
+      dockerfile: docker
+    ports:
+      - "1337:1337"
+    links:
+      - postgres
+    volumes:
+      - ./api/:/usr/talenthub/api/:rw
+      - ./assets/:/usr/talenthub/assets/:rw
+      - ./config/:/usr/talenthub/config/:rw
+      - ./logger/:/usr/talenthub/logger/:rw
+      - ./migrations/:/usr/talenthub/migrations/:rw
+      - ./scripts/:/usr/talenthub/scripts/:rw
+      - ./test/:/usr/talenthub/test/:rw
+    environment:
+    - NODE_ENV=development
+    - PG_HOST=postgres
+    - PG_DB=talenthub
+    command: bash -c "node scripts/generate.all.js; node scripts/generate.joboffer.js; pm2 start ./app.js --watch --no-daemon"

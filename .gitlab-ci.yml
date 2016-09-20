@@ -1,0 +1,31 @@
+job:
+  stage: test
+  tags: [test]
+  script:
+    - npm install
+    - npm run build
+    - mkdir /home/tunijobs/front/$CI_BUILD_ID     
+  only:
+    - test
+job2:
+  stage: test
+  tags: [deploy]
+  script:
+    - mv src/main.config.prod.sample.js src/main.config.js
+    - mv index.prod.ejs index.ejs
+    - npm install
+    - npm run build
+    - cp -rf dist /home/tunijobs/front/
+  only:
+    - deploy
+job3:
+  stage: test
+  tags: [staging]
+  script:
+    - mv src/main.config.staging.sample.js src/main.config.js
+    - mv index.staging.ejs index.ejs
+    - npm install
+    - npm run build
+    - cp -rf dist /home/jobi/front/
+  only:
+    - staging

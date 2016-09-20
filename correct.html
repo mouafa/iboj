@@ -1,0 +1,112 @@
+<template>
+  <div class=" m-t-xs p-r-md col s12">
+    <div class=" row  m-r-lg m-b-lg m-l-lg p-t-lg">
+      <div class="col s7 p-t-lg font-9 font-light bg-white">
+        <div class="border p-md">
+          <div class="row m-t-sm">
+            <div class="col s4 m-t-sm">
+              <label class="required capital">Company</label>
+            </div>
+            <div class="dropDown border p-xxs col s8">
+              <div class="company-menu-button hand" data-activates="company-menu">
+                <i class="material-icons right m-t-xs">arrow_drop_down</i>
+                <div class="row p-xxs  bg-white-smoke sticker" v-if="joboffer.company">
+                  <img :src="joboffer.company.logo" alt="logo" class="size-32 m-l-xs col s2" v-if="joboffer.company.logo">
+                  <div class="size-32 inline-block col s2" v-if="!joboffer.company.logo"></div>
+                  <span class="font-1-2 col s8 m-t-xs">{{joboffer.company.name}}</span>
+                </div>
+                <div class="row p-xxs" v-else></div>
+              </div>
+              <ul class="dropdown-content capital m-t-sm m-r-lg" id="company-menu">
+                <li @click="joboffer.company = item" v-for="item in companies">
+                  <div class="border-top fx-row fx-start-center ">
+                    <img :src="item.logo" alt="logo" class="img-handler img-rounded size-32 m-t-sm m-b-sm m-l-sm">
+                    <span class="wrrap p-l-sm">{{item.name}}</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <span class="pull-right m-r-lg m-t-xs">
+              <i class="material-icons md-14">info</i>
+              <span>You can only select company in your experience record</span>
+            </span>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 m-t-md">
+              <label :class="{'active': joboffer.title}" class="required capital" for="title">Job title</label>
+              <input id="title" maxlength="32" type="search" v-model="joboffer.title | string">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m-t-md row">
+              <label class="col s3 m-t-sm required capital">job category</label>
+              <select class="browser-default col s8" v-model="joboffer.category_id">
+                <option selected="{{$index == 0 }}" v-for="item in jobCategories" value="{{item.id}}">{{item.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class=" m-t-sm col s12">
+              <label for="tags">
+                <input id="tags" maxlength="20" name="tags" placeholder="Add tags" type="search"></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="m-r-lg input-field col s12">
+              <selector :endpoint="'/location'" :free='false' :label="'location'" :max="100" :name="locationName" :value.sync="joboffer.location"></selector>
+            </div>
+          </div>
+          <div class="row">
+            <div class="m-r-lg col s12 m-t-md row">
+              <label :class="{'active': joboffer.degree}" class="capital col s3 m-t-sm" for="degree">degree</label>
+              <select class="browser-default col s8" v-model="joboffer.degree_id">
+                <option selected="{{$index == 0 }}" v-for="item in degrees" value="{{item.id}}">{{item.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="row m-t-sm">
+            <div class="m-r-lg col s5 m-t-md row">
+              <label class="col s4 m-t-sm ">job type</label>
+              <select class="browser-default col s8" v-model="joboffer.jobtype_id">
+                <option selected="{{$item == 0 }}" v-for="item in jobTypes" value="{{item.id}}">{{item.name}}</option>
+              </select>
+            </div>
+            <div class="m-l-lg col s5 m-t-md row">
+              <label class="col s4 m-t-sm ">Years of Experience</label>
+              <select class="browser-default col s8" v-model="joboffer.experience_id">
+                <option selected="{{$index == 0 }}" v-for="item in yearExperience" value="{{item.id}}">{{item.value}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="row  m-b-sm m-t-sm">
+            <div class="m-r-lg input-field col s3">
+              <label :class="{'active': joboffer.salary_min}" for="salary_min">salary_min</label>
+              <input id="salary_min" type="search" v-model="joboffer.salary_min | numeric">
+            </div>
+            <div class="m-l-md input-field col s3">
+              <label :class="{'active': joboffer.salary_max}" for="salary_max">salary_max</label>
+              <input id="salary_max" type="search" v-model="joboffer.salary_max | numeric">
+            </div>
+            <div class="m-t-lg input-field col s4">
+              <label>/month
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <label :class="{'active': joboffer.summary}" class="capital required" for="role">summary</label>
+              <textarea class="materialize-textarea" id="job-summary" id="role" maxlength="240" v-model="joboffer.summary | substring 240"></textarea>
+            </div>
+            <div class="m-b-sm font-8 text-warning pull-right">{{remainChars}}</div>
+          </div>
+        </div>
+        <div class="pull-right m-r-lg m-t-md m-b-md ">
+          <button @click="next" class="w-xs font-light btn btn-primary m-l-md font-8 uppercase" v-ii18n="next">next</button>
+        </div>
+      </div>
+      <div class="font-9 font-light p-r-sm col s5">
+        <jobofferhistory :reload="true" v-if="isReady"></jobofferhistory>
+      </div>
+    </div>
+  </div>
+</template>

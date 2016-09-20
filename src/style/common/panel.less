@@ -1,0 +1,38 @@
+ @import 'colors.less';
+
+/* Panels */
+
+
+.hpanel  .panel-heading {
+    color: inherit;
+    font-weight: 300;
+    padding: 10px 4px;
+    transition: all .3s;
+    border: 1px solid transparent;
+    background: @color-bright;
+}
+
+
+.hpanel .panel-body {
+    background: rgba(255,255,255,0.8);
+    border: 1px solid @border-color;
+    border-top: 1px solid @border-color;
+    border-radius: 2px;
+    padding: 20px;
+    transition: all .3s;
+    position: relative;
+    word-wrap: break-word;
+}
+
+.hpanel .panel-body:hover {
+    background: rgba(255,255,255,1);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .1);
+    transition: all .5s;
+
+  }
+.hpanel.hyellow .panel-body {
+    border-top: 2px solid @color-yellow;
+}
+.hpanel.hblue .panel-body {
+    border-top: 2px solid @color-blue;
+}

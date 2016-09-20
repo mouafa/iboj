@@ -1,0 +1,98 @@
+@import './common/colors.less';
+.cd-timeline {
+  position: relative;
+  .cd-timeline-block:after {
+    /* this is the vertical line */
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .cd-timeline-block {
+    position: relative;
+    margin: 0 0 30px;
+  }
+  .cd-timeline-img {
+    position: absolute;
+    background-color: @color-background;
+    top: 0;
+    left: 0;
+    margin-left: -32px;
+    // border-radius: 50%;
+    box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+    img {
+      display: block;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      margin-left: -32px;
+      margin-top: -32px;
+    }
+  }
+  .cd-timeline-content {
+    position: relative;
+    // border: black 1px solid;
+    // border-color: @border-color;
+    min-height: 30px;
+    width: 80%;
+    background: rgba(247,247,247,0.76);
+    background: linear-gradient(to right, rgba(247,247,247,0.76) 0%, rgba(247,247,247,0.76) 6%, rgba(246,246,246,0.55) 53%, rgba(255,255,255,0.34) 100%);
+    .--edit-delete-menu {
+      float: right;
+      opacity: 0;
+      transition: opacity 200ms;
+    }
+    &:hover {
+      .--edit-delete-menu {
+        opacity: 1;
+      }
+    }
+  }
+  .cd-timeline-block-container  {
+    .cd-timeline-img {
+      left: 10%;
+    }
+    .cd-timeline-content:after,
+    .cd-timeline-content:before {
+      right: 100%;
+    }
+    .cd-timeline-content:before {
+      border-right-color: @border-color;
+    }
+    .cd-timeline-content:after {
+      border-right-color: #ffffff;
+    }
+    .cd-timeline-content {
+      float: right;
+      background: rgba(255,255,255,0.34);
+      background: linear-gradient(to right, rgba(255,255,255,0.34) 0%, rgba(246,246,246,0.55) 47%, rgba(247,247,247,0.76) 94%, rgba(247,247,247,0.76) 100%);
+    }
+  }
+  // .cd-timeline-block-container:nth-child(odd) {
+  //   .cd-timeline-img {
+  //     left: 90%;
+  //   }
+  //   .cd-timeline-content:after,
+  //   .cd-timeline-content:before {
+  //     left: 100%;
+  //   }
+  //   .cd-timeline-content:before {
+  //     border-left-color: @border-color;
+  //   }
+  //   .cd-timeline-content:after {
+  //     border-left-color: #ffffff;
+  //   }
+  // }
+  .profile-panel {
+    .btn-link:hover,
+    .btn-link:focus,
+    .btn-link:active,
+    .btn-link.active,
+    .open .dropdown-toggle.btn-link {
+      color: #FFF;
+    }
+  }
+}
+// .images-list{
+//   background: url('../../../assets/images/social/32-facebook.png');
+//   background: url('../../../assets/images/logo.svg');
+// }

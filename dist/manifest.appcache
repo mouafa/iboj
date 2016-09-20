@@ -1,0 +1,30 @@
+CACHE MANIFEST
+# cd8569e298ae04319a8d
+
+/static/cover-1.c745864.jpg
+/static/Roboto-Light.a990f61.eot
+/static/Roboto-Regular.30799ef.eot
+/static/404.e837cfa.png
+/static/Roboto-Light.46e48ce.ttf
+/static/Roboto-Light.3b813c2.woff
+/static/Roboto-Light.69f8a06.woff2
+/static/Roboto-Regular.df7b648.ttf
+/static/Roboto-Regular.ba3dcd8.woff
+/static/Roboto-Regular.2751ee4.woff2
+/static/1.f252bbc92d8350ea6b8e.js.gz
+/static/2.6a5f8f24655d6166bbb4.js.gz
+/static/auth.daf255f3b8260b541ee2.js.gz
+/static/addjoboffer.3db790abc11858bb56f5.js.gz
+/static/welcome.ee380e8bd1781e989ad6.js.gz
+/static/0.6b518610996b026aa799.js.gz
+/static/profile.c5398ed7a3b9ac870205.js.gz
+/static/vendor.f805079237521e53c20d.js.gz
+/static/dashboard.6f5740704c73207259f7.js.gz
+/static/4.28e12e19bcfe3560ca9f.js.gz
+/static/commons.53d6d3ec77d27c4b18d4.js.gz
+
+NETWORK:
+*
+
+SETTINGS:
+prefer-online

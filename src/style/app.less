@@ -1,0 +1,102 @@
+@import "./common/colors.less";
+@import "./common/backgrounds.less";
+@import "./common/borders.less";
+@import "./common/buttons.less";
+@import "./common/fonts.less";
+@import "./common/inputs.less";
+@import "./common/layout.less";
+@import "./common/margins.less";
+@import "./common/sizes.less";
+@import "./common/various.less";
+@import "./common/form.less";
+@import "./common/table.less";
+@import "./common/label.less";
+@import "./common/tooltip.less";
+// @import "./common/panel.less";
+@import "./common/flexbox.less";
+// @import "./common/notif.less";
+
+.page-container {
+    margin: 0 auto;
+    margin-top: 50px!important;
+}
+
+.float-layout {
+    width: 890px;
+    margin: 0 auto;
+}
+
+@media (min-width: 1236px) {
+    .container {
+        width: 80% !important;
+    }
+    .page-container {
+      width: 100%;
+      max-width: 1200px !important;
+      min-width: 800px !important;
+    }
+    .float-layout {
+        width: 1200px;
+    }
+}
+.main {
+  margin: 40px auto;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #555;
+}
+
+.fade-transition {
+  .to-animate {
+    transition: all .4s ease;
+    visibility: visible;
+    // transition-delay: 0.4s;
+  }
+}
+
+.fade-enter, .fade-leave {
+  .to-animate {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.slide-up-transition {
+  transition: all .3s ease;
+  visibility: visible;
+  // transition-delay: 0.3s;
+}
+
+.slide-up-enter, .slide-up-leave {
+  opacity: 0;
+  transform: translateY(10px);
+  visibility: hidden;
+}
+
+.fade-in-transition {
+  transition: all .2s ease;
+  visibility: visible;
+  // transition-delay: 0.3s;
+}
+
+.fade-in-enter, .fade-in-leave {
+  opacity: 0;
+  // transform: translateY(10px);
+  visibility: hidden;
+}
+
+.input-field input[type=search] {
+  padding-left: 0 !important;
+  display: initial !important;
+  width: 100% !important;
+}

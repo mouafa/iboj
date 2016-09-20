@@ -1,0 +1,92 @@
+/*doc
+---
+title: Inputs
+name: Form_Inputs
+category: Base CSS
+---
+
+
+```html_example
+
+<textarea class="form-control m-b-sm"  >textarea class="form-control"</textarea>
+
+<input class="form-control m-b-sm" value="input class='form-control'" ></input>
+
+<select class="form-control m-b-sm">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+
+```
+
+
+
+:focus {
+outline: 0;
+}*/
+textarea ,
+input {
+  outline: none;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+  box-shadow: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  resize: none;
+  border-radius: 0 !important;
+  box-shadow:none !important;
+}
+/*input:focus, textarea:focus,input:hover, textarea:hover{
+    outline: none!important;
+}*/
+.form-control {
+    background-color: #fff;
+    border: .25px solid #DCDCDC;
+    color: 888;
+    font-weight: 300;
+}
+
+.input-box {
+    background-color: #fff !important;
+    border: .25px solid #DCDCDC !important;
+    border-radius: 0;
+    color: 999 !important;
+    font-weight: 300 !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    box-sizing: border-box  !important;
+    margin: 0 !important;
+    font-size: 1rem;
+    min-height: 45px;
+}
+
+input.input-box {
+    height: 45px;
+}
+
+textarea.input-box {
+    min-height: 90px;
+}
+
+section.field-group {
+  &:not(:last-child){
+    margin-bottom: 20px !important;
+  }
+}
+
+textarea{
+  border : .25px solid #428bca;
+}
+fieldset{
+  border: none !important;
+  margin:0;
+     padding:0;
+     outline:0;
+     font-size:100%;
+     vertical-align:baseline;
+     background:transparent;
+}

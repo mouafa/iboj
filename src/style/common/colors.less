@@ -1,0 +1,54 @@
+/*doc
+---
+title: Colors
+name: colors
+category: Base CSS
+---
+
+Colors: to be able to use the predefined colors, You need to import common/less/colors.less
+
+```html_example
+<style>
+@import "../src/components/common/less/colors.less"
+</style>
+<div class="size-32" style="background-color: @color-navy-blue">Click</div>
+```
+*/
+
+// Color list
+@color-navy-blue:#34495e;
+@color-violet:#9b59b6;
+@color-blue:#06a2c4;
+@color-green:#7fbf7c;
+@color-yellow:#ffb606;
+@color-orange:#e28540; ;
+@color-red:#F9524E;
+@color-red-deep:#c0392b;
+@color-dark-grey:#575959;
+@color-dark-grey1:#F3F3F3;
+@color-black-bc: rgba(70,70,70,.9);
+// Additional colors
+@color-text: #6a6c6f;
+@color-text-light: lighten(@color-text, 20%);
+
+@color-bright: #f7f9fa;
+@color-background: #f1f3f6;
+@color-background-boxed: lighten(@color-background, 2%);
+@border-color: #e4e5e7;
+
+@morning-glory: #A3E1D4;
+@apricot: #F19575;
+@bay-leaf: #7DAF91;
+@silver: #A3A3A3;
+/* Mixin */
+.bg-transparent(@color, @alpha: 1) {
+  background: rgba( red(@color), green(@color), blue(@color), @alpha);
+}
+
+.color-transparent(@color, @alpha: 1) {
+  color: rgba( red(@color), green(@color), blue(@color), @alpha);
+}
+
+@color-twitter: #00aced;
+@color-facebook: #3b5998;
+@color-linkedin: #0077b5;

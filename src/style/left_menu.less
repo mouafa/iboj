@@ -1,0 +1,46 @@
+@import './common/colors.less';
+#side-menu {
+  font-weight: 300;
+  font-size: 12px;
+  background: @color-bright;
+  position: fixed;
+  width: 190px;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    li {
+      border-bottom: 1px solid @border-color;
+      padding: 15px;
+      a {
+        text-decoration: none;
+        color: @color-text;
+        text-transform: uppercase;
+      }
+      ul {
+        li {
+          font-size: 0.85em;
+        }
+        li:first-child {
+          border-top: 1px solid @border-color;
+          margin-top: 20px;
+        }
+        li:last-child {
+          border: none;
+          padding-bottom: 0;
+        }
+      }
+    }
+    li.active {
+      background: rgba(255, 255, 255, .3);
+    }
+  }
+  .arrow {
+    float: right;
+  }
+  .fa.arrow:before {
+    content: "\f104";
+  }
+  .active > a > .fa.arrow:before {
+    content: "\f107";
+  }
+}

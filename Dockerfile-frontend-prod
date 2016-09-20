@@ -1,0 +1,28 @@
+FROM node:5.11.0
+
+RUN apt-get update 
+
+#bzip2 needed for phantomjs
+RUN apt-get install -y bzip2
+RUN apt-get install -y nginx
+
+RUN rm -rf /etc/nginx/conf.d/*
+COPY ./nginx-frontend.conf /etc/nginx/conf.d/default.conf
+
+RUN service nginx restart
+
+WORKDIR /usr/talenthub
+COPY ./ /usr/talenthub/
+RUN   npm install
+RUN   npm run build
+
+WORKDIR /usr/talenthub/dist
+RUN   rm -rf /usr/share/nginx/html/*
+RUN for f in *; do mv $f /usr/share/nginx/html/$f; done
+
+ENV NODE_ENV=production
+ENV PORT=80
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
+

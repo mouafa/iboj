@@ -1,0 +1,71 @@
+/*doc
+---
+title: Borders
+name: borders
+category: Base CSS
+---
+
+Borders:
+
+```html_example
+<div class="bg-white p-md">
+  <div class=" inline-block p-sm border" >border</div>
+  <div class=" inline-block p-sm border-top" >border-top</div>
+  <div class=" inline-block p-sm border-bottom" >border-bottom</div>
+  <div class=" inline-block p-sm border-bottom-light" >border-bottom-light</div>
+  <div class=" inline-block p-sm border-left" >border-left</div>
+  <div class=" inline-block p-sm border-right" >border-right</div>
+</div>
+```
+*/
+@import "./colors.less";
+
+.border  {
+  border : 1px solid @border-color;
+}
+.border-top {
+  border-top: 1px solid @border-color;
+}
+.border-bottom {
+  border-bottom: 1px solid @border-color;
+}
+.border-bottom-light {
+  border-bottom: 1px solid @color-bright;
+}
+.border-right {
+  border-right: 1px solid @border-color;
+}
+.border-left {
+  border-left: 1px solid @border-color;
+}
+.brd-light {
+  border-color: @color-bright;
+}
+.brd-navy-blue {
+  border-color: #f00;
+}
+.brd-violet {
+  border-color: @color-violet;
+}
+.brd-blue {
+  border-color: @color-blue;
+}
+.brd-green {
+  border-color: @color-green;
+}
+.brd-yellow {
+  border-color: @color-yellow;
+}
+.brd-orange {
+  border-color: @color-orange;
+}
+.brd-red {
+  border-color: @color-red;
+}
+.brd-red-deep {
+  border-color: @color-red-deep;
+}
+
+.border-none {
+  border: none !important;
+}

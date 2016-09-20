@@ -1,0 +1,10 @@
+web_dev:
+  build: .
+  ports:
+  - "8881:4000"
+  volumes:
+  - ./src:/usr/talenthub/src/:rw
+  environment:
+  - NODE_ENV=local
+  command: pm2 start ./build/dev-server.js  --watch --no-daemon 
+

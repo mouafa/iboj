@@ -1,0 +1,86 @@
+/*doc
+---
+title: Layout
+name: Layout
+category: Base CSS
+---
+
+
+```html_example
+
+<div class="center">
+  <div >this</div>
+  <div  >is a centered text</div>
+  <div >this is a centered text.. it is centered</div>
+</div>
+
+<div class="color-line w-xxl"></div>
+
+```
+
+
+*/
+@import "./colors.less";
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden!important;
+}
+
+body {
+  /*font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  /*background-color: @color-background;*/
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9c667+0,f79621+100;Orange+3D+%234 */
+
+  background: #F3F3F3;
+  position: relative;
+  padding-bottom: 50px;
+  min-height: 80vh;
+
+  font-size: 13px;
+  color: @color-text;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.content {
+  padding: 10px;
+  min-width: 320px;
+}
+
+.footer {
+  padding: 10px 18px;
+  background: #ffffff;
+  border-top: 1px solid @border-color;
+  transition: all 0.4s ease 0s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.center{
+    text-align: center;
+}
+
+.v-middle{
+  vertical-align: middle;
+}
+.row {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.pull-right { float: right; }
+.pull-left { float: left; }
+
+.spinner {
+  margin: 0 auto 0;
+  width:100%;
+  text-align: center;
+  visibility: hidden;
+  position: absolute;
+}

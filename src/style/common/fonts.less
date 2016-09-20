@@ -1,0 +1,181 @@
+/*doc
+---
+title: Fonts & Text Color
+name: Fonts
+category: Base CSS
+---
+
+Fonts: font-weight
+
+```html_example
+<div class="font-light" >font-light</div>
+<div class="font-normal" >font-normal</div>
+<div class="font-bold" >font-bold</div>
+<div class="font-extra-bold" >font-extra-bold</div>
+```
+
+Fonts: font-weight
+
+```html_example
+<div class="font-uppercase" >font-uppercase</div>
+<div class="font-trans" >font-trans</div>
+<div class="font-8" >font-8</div>
+<div class="font-9" >font-9</div>
+```
+H1.. H6:
+
+```html_example
+<h1  >this is h1</h1>
+<h2  >this is h2</h2>
+<h3  >this is h3</h3>
+<h4  >this is h4</h4>
+<h5  >this is h5</h5>
+<h6  >this is h6</h6>
+```
+
+Text color
+
+```html_example
+<span class="text-primary"  >text-primary</span>
+<span class="text-primary-2"  >text-primary-2</span>
+<span class="text-info"  >text-info</span>
+<span class="text-success"  >text-success</span>
+<span class="text-warning"  >text-warning</span>
+<span class="text-danger"  >text-danger</span>
+<span class="text-white"  >text-white</span>
+<span class="text-light"  >text-light</span>
+```
+
+
+
+
+*/
+@import "./colors.less";
+
+/* Fonts */
+
+.font-slim {
+  font-weight: 100;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-normal,.font-regular {
+  font-weight: 400;
+}
+.font-bold {
+  font-weight: 600;
+}
+.font-extra-bold {
+  font-weight: 700;
+}
+
+.font-uppercase,.uppercase {
+  text-transform: uppercase !important;
+}
+
+.capital{
+  text-transform: capitalize;
+}
+
+.font-trans {
+  opacity: 0.5 !important;
+}
+
+.text-big {
+  font-size: 60px !important;
+}
+.font-7{
+    font-size: .7em !important;
+}
+
+.font-8{
+    font-size: .8em !important;
+}
+
+.font-9{
+    font-size: .9em !important;
+}
+.font-1{
+    font-size: 1em !important;
+}
+
+.font-1-2{
+    font-size: 1.2em !important;
+}
+.font-1-1{
+    font-size: 1.1em !important;
+}
+.font-1-5{
+    font-size: 1.5em !important;
+}
+.font-2-{
+    font-size: 2em !important;
+}
+
+.word-wrapper{
+  white-space: normal;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.break-word{
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-all;
+  // white-space: pre;
+}
+
+h1, .h1, h2, .h2, h3, .h3,h4,h5,h6
+  {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-weight: 300;
+}
+
+h6{
+  font-size:16px;
+}
+.text-grey {
+  color: @color-dark-grey;
+}
+
+.text-primary {
+  color: @color-navy-blue;
+}
+.text-primary-2 {
+  color: @color-violet;
+}
+.text-info {
+  color: @color-blue;
+}
+
+.text-success {
+  color: @color-green;
+}
+.text-warning {
+  color: @color-yellow;
+}
+.text-danger {
+  color: @color-red;
+}
+.text-white {
+  color: #fff !important;
+}
+.text-black {
+  color: #000;
+}
+.text-light {
+  color: @color-text-light;
+}
+.text-red-deep {
+  color: @color-red-deep;
+}
+//.sans-serif{
+ // font-family: sans-serif;
+//}
+.text-orange{
+  color: @color-orange;
+}

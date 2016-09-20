@@ -1,0 +1,154 @@
+
+
+
+/* Height */
+
+.h-100 {
+  min-height: 100px;
+}
+.h-150 {
+  min-height: 150px;
+}
+.h-200 {
+  min-height: 200px;
+}
+.h-300 {
+  min-height: 300px;
+}
+.h-400 {
+  min-height: 400px;
+}
+.h-500 {
+  min-height: 500px;
+}
+.h-600 {
+  min-height: 600px;
+}
+.h-max-100 {
+  max-height: 100px;
+}
+.h-max-150 {
+  max-height: 150px;
+}
+.h-max-200 {
+  max-height: 200px;
+}
+.h-max-250 {
+  max-height: 250px;
+}
+.h-max-300 {
+  max-height: 300px;
+}
+.h-max-400 {
+  max-height: 400px;
+}
+.h-max-500 {
+  max-height: 500px;
+}
+.h-max-600 {
+  max-height: 600px;
+}
+/* Widths */
+.w-all{ width: 100%; }
+.w-xxs { width: 25px; }
+.w-xs { width: 100px; }
+.w-sm { width: 120px; }
+.w-m { width: 140px; }
+.w-lg { width: 160px; }
+.w-xl { width: 180px; }
+.w-xxl { width: 200px; }
+.w-xlg { width: 220px; }
+.w-100 {
+  min-width: 100px;
+}
+.w-min-150 {
+  min-width: 150px;
+}
+.w-min-200 {
+  min-width: 200px;
+}
+.w-min-300 {
+  min-width: 300px;
+}
+.w-min-400 {
+  min-width: 400px;
+}
+.w-min-500 {
+  min-width: 500px;
+}
+.w-min-600 {
+  min-width: 600px;
+}
+.w-max-100 {
+  max-width: 100px;
+}
+.w-max-150 {
+  max-width: 150px;
+}
+.w-max-200 {
+  max-width: 200px;
+}
+.w-max-250 {
+  max-width: 250px;
+}
+.w-max-300 {
+  max-width: 300px;
+}
+.w-max-400 {
+  max-width: 400px;
+}
+.w-max-500 {
+  max-width: 500px;
+}
+.w-max-600 {
+  max-width: 600px;
+}
+.size-12 {
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+.size-16 {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+.size-24 {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+.size-32 {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+.size-48 {
+  display: block;
+  width: 48px;
+  height: 48px;
+}
+.size-64 {
+  display: block;
+  width: 64px;
+  height: 64px;
+}
+.size-96 {
+  display: block;
+  width: 96px;
+  height: 96px;
+}
+.size-128 {
+  display: block;
+  width: 128px;
+  height: 128px;
+}
+
+.min-loop(@max) when (@max > 0) {
+  .min-loop((@max - 10));
+  .w-min-@{max} {
+    min-width: 0% + @max
+  }
+}
+
+.min-loop(100);
