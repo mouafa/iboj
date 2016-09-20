@@ -1,6 +1,3 @@
-# talenthub
-
-> millions of recruiters
 
 ## Build Setup
 
